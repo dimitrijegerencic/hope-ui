@@ -1,5 +1,9 @@
-<script setup></script>
+<script setup>
+import SignUp from '@/components/register/SignUp.vue'
+</script>
 
 <template>
-  <main></main>
+  <main>
+    <SignUp />
+  </main>
 </template>
