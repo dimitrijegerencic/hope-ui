@@ -36,7 +36,7 @@ const signUp = () => {
   <div class="main-container">
     <v-row>
       <v-col class="left-column">
-        <img src="@/assets/images/register-background.png" alt="Background" />
+        <img src="@/assets/images/login-background.png" alt="Background" />
       </v-col>
       <v-col class="right-column d-flex align-center">
         <v-container class="form-container">
@@ -161,6 +161,17 @@ const signUp = () => {
       color: #3a57e8;
       text-decoration: none;
     }
+  }
+}
+
+.main-container {
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }
 </style>
