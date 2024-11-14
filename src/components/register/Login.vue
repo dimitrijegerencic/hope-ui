@@ -16,8 +16,8 @@ const logIn = () => {
 
   console.log('User', user)
 
-  // snackbarMessage.value = 'Login successful!'
-  // showSnackbar.value = true
+  snackbarMessage.value = 'Login successful!'
+  showSnackbar.value = true
 
   setTimeout(() => {
     router.push('/dashboard')
