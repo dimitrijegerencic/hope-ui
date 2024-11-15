@@ -1,9 +1,20 @@
 <script setup>
 import PrimaryButton from '@/components/buttons/PrimaryButton.vue'
+import { ref } from 'vue'
 import router from '@/router/index.js'
 
-const goBack = () => {
-  router.push('/login')
+const emailAddress = ref('')
+
+const resetPassword = () => {
+  const user = {
+    email_address: emailAddress.value,
+  }
+
+  console.log('User', user)
+
+  setTimeout(() => {
+    router.push('/reset_done')
+  }, 2000)
 }
 </script>
 
@@ -13,16 +24,28 @@ const goBack = () => {
       <v-col class="right-column d-flex align-center">
         <v-container class="form-container">
           <img src="@/assets/images/logo.png" alt="Logo" />
-          <div class="text-center mt-7">
-            <img src="@/assets/images/check.png" alt="Logo" />
-            <h1>Success !</h1>
-            <p class="info-text mt-6">
-              An email has been sent to your email@domain.com. Please check for an email from
-              company and click on the included link to reset your password.
+          <div class="text-center mt-10">
+            <h1>Reset Password</h1>
+            <p class="create-account-text mt-5">
+              Enter your email address and we’ll send you an email with instructions to reset your
+              password
             </p>
           </div>
-          <div class="text-center mt-9">
-            <PrimaryButton label="Back to home" width="188" height="44" @click="goBack" />
+
+          <v-row class="mt-5">
+            <v-col>
+              <v-label>Email</v-label>
+              <v-text-field
+                v-model="emailAddress"
+                color="primary"
+                variant="outlined"
+                class="mt-2"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+
+          <div class="text-center mt-7">
+            <PrimaryButton label="Reset" width="188" height="44" @click="resetPassword" />
           </div>
         </v-container>
       </v-col>
@@ -36,7 +59,6 @@ const goBack = () => {
 <style scoped>
 .main-container {
   height: 100vh;
-  overflow: hidden;
 
   .left-column img {
     width: 100%;
@@ -49,13 +71,12 @@ const goBack = () => {
       padding-right: 200px;
 
       h1 {
-        font-size: 64px;
-        color: #0048b2;
+        font-size: 33px;
       }
 
-      .info-text {
+      .create-account-text {
         font-size: 16px;
-        color: #232d42;
+        color: #8a92a6;
       }
     }
 
