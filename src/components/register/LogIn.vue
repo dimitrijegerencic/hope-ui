@@ -5,8 +5,6 @@ import router from '@/router/index.js'
 
 const emailAddress = ref('')
 const password = ref('')
-const showSnackbar = ref(false)
-const snackbarMessage = ref('')
 
 const logIn = () => {
   const user = {
@@ -16,9 +14,6 @@ const logIn = () => {
 
   console.log('User', user)
 
-  snackbarMessage.value = 'Login successful!'
-  showSnackbar.value = true
-
   setTimeout(() => {
     router.push('/dashboard')
   }, 2000)
@@ -27,10 +22,6 @@ const logIn = () => {
 
 <template>
   <div class="main-container">
-    <v-snackbar v-model="showSnackbar" color="success" location="top">
-      {{ snackbarMessage }}
-    </v-snackbar>
-
     <v-row>
       <v-col class="right-column d-flex align-center">
         <v-container class="form-container">
