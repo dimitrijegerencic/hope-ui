@@ -27,7 +27,7 @@ const logIn = () => {
 
 <template>
   <div class="main-container">
-    <v-snackbar v-model="showSnackbar" color="success" location="top" position="end">
+    <v-snackbar v-model="showSnackbar" color="success" location="top">
       {{ snackbarMessage }}
     </v-snackbar>
 
@@ -62,6 +62,12 @@ const logIn = () => {
                 class="mt-2"
                 type="password"
               ></v-text-field>
+            </v-col>
+          </v-row>
+          <v-row class="mt-0">
+            <v-col> Remember me </v-col>
+            <v-col class="d-flex justify-end">
+              <RouterLink to="/reset">Forgot your password?</RouterLink>
             </v-col>
           </v-row>
 
@@ -111,17 +117,6 @@ const logIn = () => {
       color: #3a57e8;
       text-decoration: none;
     }
-  }
-}
-
-.main-container {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
   }
 }
 </style>
