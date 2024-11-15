@@ -40,7 +40,7 @@ const goBack = () => {
 
   .left-column img {
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
 
   .right-column {

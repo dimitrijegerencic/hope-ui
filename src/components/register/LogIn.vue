@@ -82,11 +82,10 @@ const logIn = () => {
 <style scoped>
 .main-container {
   height: 100vh;
-  overflow: hidden;
 
   .left-column img {
     width: 100%;
-    height: 100%;
+    height: 100vh;
   }
 
   .right-column {
